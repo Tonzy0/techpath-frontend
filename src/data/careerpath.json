@@ -1,0 +1,71 @@
+[
+  {
+    "question_id": "1",
+    "category": "Interests and Passions",
+    "question_text": "What areas of technology excite you the most?",
+    "options": [
+      "Software Development",
+      "Data Science",
+      "Cybersecurity",
+      "UI/UX Design",
+      "Other"
+    ],
+    "response_type": "multiple_choice"
+  },
+  {
+    "question_id": "2",
+    "category": "Skills and Strengths",
+    "question_text": "What technical skills do you currently have, and which ones do you want to develop?",
+    "response_type": "text"
+  },
+  {
+    "question_id": "3",
+    "category": "Career Goals",
+    "question_text": "What type of tech career do you envision for yourself?",
+    "options": ["Developer", "IT Consultant", "Data Analyst", "Other"],
+    "response_type": "multiple_choice"
+  },
+  {
+    "question_id": "4",
+    "category": "Learning Style",
+    "question_text": "Do you learn better through hands-on experience, theoretical study, or a mix of both?",
+    "options": ["Hands-on", "Theoretical", "Mix of Both"],
+    "response_type": "multiple_choice"
+  },
+  {
+    "question_id": "5",
+    "category": "Market Demand",
+    "question_text": "Which tech fields are currently in high demand, and how do they align with your interests?",
+    "response_type": "text"
+  },
+  {
+    "question_id": "6",
+    "category": "Work-Life Balance",
+    "question_text": "How important is work-life balance to you, and how do different tech roles align with this priority?",
+    "response_type": "text"
+  },
+  {
+    "question_id": "7",
+    "category": "Values and Impact",
+    "question_text": "Do you want to work on projects that have a social impact or contribute to a particular cause?",
+    "response_type": "text"
+  },
+  {
+    "question_id": "8",
+    "category": "Educational Path",
+    "question_text": "What level of education or certification is required for your desired tech career?",
+    "response_type": "text"
+  },
+  {
+    "question_id": "9",
+    "category": "Mentorship and Networking",
+    "question_text": "Do you have access to mentors or professionals in the field you’re interested in?",
+    "response_type": "text"
+  },
+  {
+    "question_id": "10",
+    "category": "Long-Term Vision",
+    "question_text": "Where do you see yourself in five or ten years within the tech industry?",
+    "response_type": "text"
+  }
+]

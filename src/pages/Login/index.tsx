@@ -47,7 +47,7 @@ function Login() {
       const tokens = res.data.responseObject.tokens;
       const user = res.data.responseObject.user;
 
-      localStorage.setItem("token", JSON.stringify(tokens));
+      localStorage.setItem("tokens", JSON.stringify(tokens));
       setAuth({ isAuthorized: true, user });
       navigate("/dashboard");
     } catch (err: any) {

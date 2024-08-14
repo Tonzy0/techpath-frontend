@@ -8,6 +8,8 @@ import MentorRegister from "./pages/Register/MentorRegister";
 import "./App.css";
 import { Toaster } from "./components/ui/toaster";
 import Dashboard from "./pages/Dashboard";
+import CareerOptions from "./pages/Dashboard/CareerOptions";
+import CareerAssessments from "./pages/Dashboard/CareerAssessment";
 
 function App() {
   return (
@@ -19,6 +21,11 @@ function App() {
           <Route Component={MentorRegister} path="/register/mentor" />
           <Route Component={Home} path="/" />
           <Route Component={Dashboard} path="/dashboard" />
+          <Route Component={CareerOptions} path="/dashboard/career-options" />
+          <Route
+            Component={CareerAssessments}
+            path="/dashboard/career-assessment"
+          />
         </Routes>
         <Toaster />
       </BrowserRouter>

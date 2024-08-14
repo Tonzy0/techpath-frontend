@@ -1,9 +1,11 @@
 import axios from "axios";
+const tokens = JSON.parse(localStorage.getItem("tokens") as string);
 
 const axiosInstance = axios.create({
-  baseURL: "https://techpath-backend.onrender.com",
+  // baseURL: "https://techpath-backend.onrender.com",
+  baseURL: "http://localhost:8080",
   headers: {
-    Authorization: `Bearer ${localStorage.getItem("token")}`,
+    Authorization: tokens ? `Bearer ${tokens.accessToken}` : "",
   },
 });
 

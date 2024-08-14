@@ -1,0 +1,92 @@
+[
+  {
+    "title": "Software Engineer",
+    "description": "Designs, develops, and maintains software applications and systems.",
+    "average_salary_naira": 6000000,
+    "popular_companies": ["Microsoft", "Google", "Andela", "Interswitch"]
+  },
+  {
+    "title": "Data Scientist",
+    "description": "Analyzes and interprets complex data to help organizations make better decisions.",
+    "average_salary_naira": 7500000,
+    "popular_companies": ["IBM", "Paystack", "Flutterwave", "MTN Nigeria"]
+  },
+  {
+    "title": "UX/UI Designer",
+    "description": "Creates user-friendly interfaces and optimizes user experiences for websites and applications.",
+    "average_salary_naira": 5000000,
+    "popular_companies": ["Kuda Bank", "Jumia", "Piggyvest", "Airtel Nigeria"]
+  },
+  {
+    "title": "Cybersecurity Analyst",
+    "description": "Protects computer networks and systems from cyber threats and attacks.",
+    "average_salary_naira": 8000000,
+    "popular_companies": [
+      "Access Bank",
+      "Guaranty Trust Bank",
+      "Nigerian National Petroleum Corporation",
+      "Central Bank of Nigeria"
+    ]
+  },
+  {
+    "title": "Cloud Solutions Architect",
+    "description": "Designs and oversees the implementation of cloud computing strategies for organizations.",
+    "average_salary_naira": 9000000,
+    "popular_companies": [
+      "Amazon Web Services",
+      "Microsoft Nigeria",
+      "MainOne",
+      "Rack Centre"
+    ]
+  },
+  {
+    "title": "Mobile App Developer",
+    "description": "Creates applications for mobile devices, including smartphones and tablets.",
+    "average_salary_naira": 5500000,
+    "popular_companies": ["Opay", "Palmpay", "Bolt", "9mobile"]
+  },
+  {
+    "title": "DevOps Engineer",
+    "description": "Combines software development and IT operations to improve the software delivery process.",
+    "average_salary_naira": 7000000,
+    "popular_companies": [
+      "Globacom",
+      "Inlaks",
+      "SystemSpecs",
+      "Computer Warehouse Group"
+    ]
+  },
+  {
+    "title": "Artificial Intelligence Engineer",
+    "description": "Develops and implements AI and machine learning systems and applications.",
+    "average_salary_naira": 8500000,
+    "popular_companies": [
+      "Google Nigeria",
+      "Kobo360",
+      "Data Scientists Network",
+      "Cellulant"
+    ]
+  },
+  {
+    "title": "Blockchain Developer",
+    "description": "Creates and implements blockchain-based solutions and decentralized applications.",
+    "average_salary_naira": 7800000,
+    "popular_companies": [
+      "Bitfxt Technologies",
+      "Quidax",
+      "Bundle Africa",
+      "Patricia"
+    ]
+  },
+  {
+    "title": "Network Engineer",
+    "description": "Designs, implements, and maintains computer networks for organizations.",
+    "average_salary_naira": 6500000,
+    "popular_companies": [
+      "Globacom",
+      "Airtel Nigeria",
+      "IHS Towers",
+      "21st Century Technologies"
+    ]
+  }
+]
