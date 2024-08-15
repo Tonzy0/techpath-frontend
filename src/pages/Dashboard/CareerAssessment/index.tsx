@@ -1,8 +1,20 @@
+import { Button } from "@/components/ui/button";
 import questions from "@/data/careerpath.json";
 import AuthLayout from "@/layout/AuthLayout";
 import DashboardLayout from "@/layout/DashboardLayout";
+import axios from "@/lib/axios";
 import { QuestionPayload } from "@/types";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
+import { useNavigate } from "react-router-dom";
 
 function CareerAssessments() {
   const mappedSurveys: QuestionPayload[] = questions.map((question) => ({
@@ -11,17 +23,21 @@ function CareerAssessments() {
     text: question.question_text,
     responseType: question.response_type,
     options: question.options ?? null,
-    answer: question.response_type === "multichoice" ? [] : "",
+    answer: question.response_type === "multiple_choice" ? [] : "",
   }));
 
   const [survey, setSurvey] = useState<QuestionPayload[]>(mappedSurveys);
+  const [career, setCareer] = useState("");
+
+  const buttonRef = useRef<HTMLButtonElement | null>(null);
+  const navigate = useNavigate();
 
   const handleOptionClick = (option: string, questionId: string) => {
     setSurvey((prevSurvey) =>
       prevSurvey.map((q) => {
         if (q.questionId !== questionId) return q;
 
-        if (q.responseType === "multichoice") {
+        if (q.responseType === "multiple_choice") {
           const updatedAnswer = q.answer as string[];
           if (updatedAnswer.includes(option)) {
             return { ...q, answer: updatedAnswer.filter((a) => a !== option) };
@@ -43,6 +59,15 @@ function CareerAssessments() {
     );
   };
 
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+    const res = await axios.post("/career-path", { survey });
+    setCareer(res.data.responseObject.recommendedCareerPath);
+    if (buttonRef.current) {
+      buttonRef.current.click();
+    }
+  };
+
   return (
     <AuthLayout>
       <DashboardLayout>
@@ -55,7 +80,7 @@ function CareerAssessments() {
               Answer a few questions to receive personalized recommendations
               that align with your strengths and career goals.
             </h3>
-            <form className="flex flex-col gap-5 mt-4">
+            <form className="flex flex-col gap-5 mt-4" onSubmit={handleSubmit}>
               {survey.map((question) => (
                 <div key={question.questionId} className="mb-6">
                   <div className="p-4 bg-gray-100 rounded-lg">
@@ -95,15 +120,39 @@ function CareerAssessments() {
                   )}
                 </div>
               ))}
-              <button
+              <Button
                 type="submit"
-                className="px-6 py-2 mt-6 text-white transition-colors bg-blue-500 rounded-lg hover:bg-blue-600"
+                className="px-6 py-2 mt-6 text-white transition-colors rounded-lg bg-brand hover:bg-blue-600"
               >
                 Submit Assessment
-              </button>
+              </Button>
             </form>
           </div>
         </div>
+
+        <AlertDialog>
+          <AlertDialogTrigger ref={buttonRef} className="hidden">
+            Open
+          </AlertDialogTrigger>
+          <AlertDialogContent className="w-[90%] md:w-full">
+            <AlertDialogHeader>
+              <AlertDialogDescription>
+                Based on your answers, your recommended career path is in{" "}
+                <span className="font-bold text-brand">{career}</span>
+              </AlertDialogDescription>
+            </AlertDialogHeader>
+            <AlertDialogFooter className="inline-flex flex-row gap-2">
+              <AlertDialogAction
+                className="w-1/2 bg-brand"
+                onClick={() => {
+                  navigate("/dashboard/mentors");
+                }}
+              >
+                View Mentors
+              </AlertDialogAction>
+            </AlertDialogFooter>
+          </AlertDialogContent>
+        </AlertDialog>
       </DashboardLayout>
     </AuthLayout>
   );

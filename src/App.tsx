@@ -10,6 +10,8 @@ import { Toaster } from "./components/ui/toaster";
 import Dashboard from "./pages/Dashboard";
 import CareerOptions from "./pages/Dashboard/CareerOptions";
 import CareerAssessments from "./pages/Dashboard/CareerAssessment";
+import Mentors from "./pages/Dashboard/Mentors";
+import Mentor from "./pages/Dashboard/Mentors/Mentor";
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
             Component={CareerAssessments}
             path="/dashboard/career-assessment"
           />
+          <Route Component={Mentors} path="/dashboard/mentors" />
+          <Route Component={Mentor} path="/dashboard/mentors/:id" />
         </Routes>
         <Toaster />
       </BrowserRouter>

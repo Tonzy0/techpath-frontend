@@ -11,8 +11,13 @@ function AuthNavbar() {
           TECHPATH
         </Link>
       </div>
-      <div>
-        <p className="text-lg font-bold capitalize">{user.name}</p>
+      <div className="flex items-center gap-3 mb-4">
+        <div>
+          <p className="text-lg font-bold capitalize">{user.name}</p>
+        </div>
+        <div className="flex items-center justify-center w-16 h-16 mr-4 text-3xl font-bold text-white rounded-full bg-brand">
+          {user.name[0]}
+        </div>
       </div>
     </div>
   );
